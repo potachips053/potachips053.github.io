@@ -16,15 +16,17 @@
   a{text-decoration:none;color:inherit}
 
   @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes slideDown{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
 
   /* announcement bar */
   .ann-bar{background:linear-gradient(90deg,#C08208,#E8A80A,#F8C94A,#E8A80A,#C08208);color:#fff;text-align:center;padding:9px 48px;font-size:13px;font-weight:600;position:relative;letter-spacing:.2px}
+  .ann-text-short{display:none}
   .ann-close{position:absolute;right:14px;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,.9);font-size:20px;cursor:pointer;line-height:1;padding:2px 6px;border-radius:4px;transition:background .15s}
   .ann-close:hover{background:rgba(0,0,0,.15)}
 
   /* header */
   header{position:sticky;top:0;z-index:200;background:#fff;border-bottom:2px solid #F0DEB4;box-shadow:0 2px 20px rgba(212,150,10,.08)}
-  .header-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;gap:20px}
+  .header-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;gap:20px;position:relative}
   .logo{flex:none;display:flex;align-items:center}
   .logo img{height:44px;object-fit:contain}
   .nav{display:flex;flex:1;justify-content:center;gap:2px;flex-wrap:wrap}
@@ -35,6 +37,24 @@
   .zalo-link{flex:none;display:flex;align-items:center;gap:7px;font-size:14px;font-weight:700;color:#D4960A;white-space:nowrap;transition:color .15s}
   .zalo-link:hover{color:#0068FF}
   .zalo-link img{width:22px;height:22px;object-fit:contain;flex:none}
+
+  /* mobile header actions + nav drawer */
+  .header-actions{display:flex;align-items:center;gap:8px;margin-left:auto}
+  .mob-zalo-btn{display:none;align-items:center;justify-content:center;width:38px;height:38px;border-radius:8px;background:#EDF3FF}
+  .mob-zalo-btn img{width:24px;height:24px;object-fit:contain}
+  .mob-menu-btn{display:none;align-items:center;justify-content:center;width:40px;height:40px;background:#FEF3DC;border:none;border-radius:8px;cursor:pointer;flex-direction:column;gap:5px;padding:10px;flex:none}
+  .mob-menu-btn span{display:block;width:18px;height:2px;background:#6B4E1A;border-radius:2px}
+  .mob-nav{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:2px solid #F0DEB4;box-shadow:0 8px 24px rgba(0,0,0,.08);animation:slideDown .2s ease;z-index:300;padding:8px 0 12px}
+  .mob-nav.open{display:block}
+  .mob-nav a{display:block;padding:13px 20px;font-size:15px;font-weight:600;color:#6B4E1A}
+  .mob-nav a:active{background:#FEF3DC}
+  .mob-nav a.purple{color:#7C3AED}
+  .mob-nav a.blue{color:#2563EB}
+  .mob-nav-actions{margin:8px 16px 0;padding-top:12px;border-top:1px solid #F0DEB4;display:flex;gap:8px;flex-wrap:wrap}
+  .mob-nav-actions a{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:8px;font-size:13px;font-weight:700}
+  .mob-nav-actions .zalo{background:#EDF3FF;color:#0068FF}
+  .mob-nav-actions .zalo img{width:18px;height:18px;object-fit:contain}
+  .mob-nav-actions .shopee{background:#FFF3F0;color:#EE4D2D}
 
   /* hero */
   .hero{background:linear-gradient(140deg,#FEF3DC 0%,#FFFDF5 40%,#FEF0CF 100%);padding:80px 24px 88px;position:relative;overflow:hidden}
@@ -178,6 +198,13 @@
   .shopee-cta{display:inline-block;background:#D4960A;color:#fff;padding:14px 36px;border-radius:10px;font-size:16px;font-weight:700;box-shadow:0 4px 20px rgba(212,150,10,.4);transition:all .15s}
   .shopee-cta:hover{background:#B8820A;transform:translateY(-1px)}
 
+  /* mobile sticky bottom CTA */
+  .mob-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:300;background:#fff;border-top:1.5px solid #F0DEB4;box-shadow:0 -4px 20px rgba(0,0,0,.1);padding:10px 12px;gap:8px;align-items:center}
+  .mob-cta a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 8px;border-radius:10px;font-size:13px;font-weight:700;min-height:44px}
+  .mob-cta .zalo{background:#EDF3FF;border:1.5px solid #0068FF;color:#0068FF}
+  .mob-cta .zalo img{width:20px;height:20px;object-fit:contain}
+  .mob-cta .shopee{background:#EE4D2D;color:#fff}
+
   /* footer */
   footer{background:#0F0A04;padding:28px 24px;text-align:center}
   footer img{height:38px;object-fit:contain;margin:0 auto 14px;opacity:.75}
@@ -186,16 +213,46 @@
 
   /* responsive tweaks */
   @media (max-width: 640px){
-    .hero{padding:56px 20px 64px}
-    .hero h1{font-size:34px}
-    .hero p{font-size:15px}
-    .header-inner{padding:0 16px;gap:12px;height:auto;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
-    .nav{order:3;width:100%;justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px}
-    .nav a{white-space:nowrap}
-    #about h2{font-size:26px}
-    .brand-head h2{font-size:24px}
-    .section-head h2{font-size:24px}
-    #contact h2{font-size:26px}
+    .ann-bar{font-size:11px;padding:8px 40px 8px 10px;line-height:1.5}
+    .ann-close{min-width:32px;min-height:32px}
+    .ann-text-full{display:none}
+    .ann-text-short{display:inline}
+
+    .header-inner{padding:0 16px;height:56px}
+    .logo img{height:36px}
+    .nav,.zalo-link{display:none}
+    .mob-zalo-btn,.mob-menu-btn{display:flex}
+
+    .hero{padding:44px 16px 52px}
+    .hero h1{font-size:28px}
+    .hero p{font-size:14px}
+
+    .policy-inner{grid-template-columns:repeat(2,1fr);gap:10px;padding:14px 16px}
+
+    #about,#featured,#ahohwa,#biotrade,#new{padding:44px 16px}
+    #contact{padding:52px 16px}
+
+    #about .grid{grid-template-columns:1fr;gap:28px}
+    #about h2{font-size:22px}
+    .brand-head h2{font-size:22px}
+    .section-head h2{font-size:22px}
+    #contact h2{font-size:22px}
+    .kicker{font-size:11px}
+
+    .pgrid,.pgrid-new{grid-template-columns:repeat(2,1fr);gap:10px}
+    .card .body{padding:9px 10px 11px}
+    .card .name{font-size:12px;min-height:32px}
+    .card .salep{font-size:15px}
+    .card .btn{padding:8px 0;font-size:11px}
+    .card--new .body{padding:11px 12px 13px}
+    .card--new .name{font-size:12.5px;min-height:34px}
+    .card--new .salep{font-size:16px}
+    .card--new .btn{padding:9px 0;font-size:12px}
+
+    .contact-grid{grid-template-columns:repeat(2,1fr)}
+
+    body{padding-bottom:64px}
+    .mob-cta{display:flex}
   }
 </style>
 </head>
@@ -203,7 +260,8 @@
 
   <!-- ANNOUNCEMENT BAR -->
   <div id="ann-bar" class="ann-bar">
-    🚚 MIỄN PHÍ VẬN CHUYỂN cho đơn hàng từ 300.000đ &nbsp;·&nbsp; ✨ Ưu đãi giảm đến 31% toàn bộ sản phẩm
+    <span class="ann-text-full">🚚 MIỄN PHÍ VẬN CHUYỂN cho đơn hàng từ 300.000đ &nbsp;·&nbsp; ✨ Ưu đãi giảm đến 31% toàn bộ sản phẩm</span>
+    <span class="ann-text-short">🚚 Freeship từ 300K &nbsp;·&nbsp; ✨ Giảm đến 31%</span>
     <button class="ann-close" aria-label="Đóng" onclick="document.getElementById('ann-bar').style.display='none'">×</button>
   </div>
 
@@ -225,6 +283,28 @@
         <img src="uploads/pasted-1782143414908-0.png" alt="Zalo">
         0899 200 899
       </a>
+      <div class="header-actions">
+        <a href="https://zalo.me/0899200899" target="_blank" rel="noopener" class="mob-zalo-btn" aria-label="Zalo">
+          <img src="uploads/pasted-1782143414908-0.png" alt="Zalo">
+        </a>
+        <button class="mob-menu-btn" aria-label="Menu" aria-expanded="false" onclick="toggleMobNav(this)">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div id="mob-nav" class="mob-nav">
+        <a href="#about" onclick="closeMobNav()">Giới thiệu</a>
+        <a href="#featured" onclick="closeMobNav()">Sản phẩm nổi bật</a>
+        <a href="#ahohwa" class="purple" onclick="closeMobNav()">🇰🇷 AHOHWA</a>
+        <a href="#biotrade" class="blue" onclick="closeMobNav()">🇧🇬 BIOTRADE</a>
+        <a href="#new" onclick="closeMobNav()">Mới về</a>
+        <a href="#contact" onclick="closeMobNav()">Liên hệ</a>
+        <div class="mob-nav-actions">
+          <a class="zalo" href="https://zalo.me/0899200899" target="_blank" rel="noopener">
+            <img src="uploads/pasted-1782143414908-0.png" alt="Zalo">0899 200 899
+          </a>
+          <a class="shopee" href="https://shopee.vn/rosia_cosmetics" target="_blank" rel="noopener">🛒 Shopee</a>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -911,6 +991,30 @@
     <p class="l1">Mỹ phẩm chính hãng · AHOHWA &amp; BIOTRADE · Giao hàng toàn quốc</p>
     <p class="l2">© 2025 · Liên hệ: 0899 200 899 · gkieu204@gmail.com</p>
   </footer>
+
+  <!-- MOBILE STICKY BOTTOM CTA -->
+  <div class="mob-cta" id="mob-cta">
+    <a href="https://zalo.me/0899200899" target="_blank" rel="noopener" class="zalo">
+      <img src="uploads/pasted-1782143414908-0.png" alt="Zalo">
+      Zalo tư vấn
+    </a>
+    <a href="https://shopee.vn/rosia_cosmetics" target="_blank" rel="noopener" class="shopee">
+      🛒 Mua trên Shopee
+    </a>
+  </div>
+
+  <script>
+    function toggleMobNav(btn){
+      var nav = document.getElementById('mob-nav');
+      var open = nav.classList.toggle('open');
+      if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    function closeMobNav(){
+      document.getElementById('mob-nav').classList.remove('open');
+      var btn = document.querySelector('.mob-menu-btn');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    }
+  </script>
 
 </body>
 </html>
