@@ -275,7 +275,7 @@
     <div class="blob1"></div>
     <div class="blob2"></div>
     <div class="hero-inner">
-      <div class="hero-pill">✨ <span class="dyn-products">126</span>+ SẢN PHẨM · CHÍNH HÃNG · RẺ HƠN SHOPEE</div>
+      <div class="hero-pill">✨ <span class="dyn-products">125</span>+ SẢN PHẨM · CHÍNH HÃNG · RẺ HƠN SHOPEE</div>
       <h1>Làn Da Sáng Khoẻ,<br><span>Tự Tin Mỗi Ngày</span></h1>
       <p>Mỹ phẩm chính hãng từ <strong><span class="dyn-brands">15</span> thương hiệu quốc tế</strong> uy tín — được kiểm chứng bởi da liễu, an toàn mọi loại da, giá tốt hơn Shopee.</p>
       <div class="hero-ctas">
@@ -344,7 +344,7 @@
 
       <div class="section-hdr">
         <div class="kicker">📦 Danh Mục Sản Phẩm</div>
-        <h2><span class="dyn-products">126</span> Sản Phẩm Chính Hãng</h2>
+        <h2><span class="dyn-products">125</span> Sản Phẩm Chính Hãng</h2>
         <p>Giá website luôn rẻ hơn giá Shopee niêm yết — đặt hàng qua Zalo hoặc Shopee shop</p>
       </div>
 
@@ -403,7 +403,7 @@
   <!-- FOOTER -->
   <footer>
     <img src="uploads/logo-1782118237044.jpg" alt="Logo">
-    <p class="l1"><span class="dyn-products">126</span>+ Sản phẩm chính hãng · Giao hàng toàn quốc</p>
+    <p class="l1"><span class="dyn-products">125</span>+ Sản phẩm chính hãng · Giao hàng toàn quốc</p>
     <p class="l2">© 2025 · Liên hệ: 0899 200 899 · gkieu204@gmail.com</p>
   </footer>
 
@@ -462,14 +462,6 @@
         'Xịt khoáng/xịt đặc trị':'💨','Kem mắt':'👁️',
         'Tẩy da chết':'🌸','Toner':'💦','Mỹ phẩm High-end':'👑'
       };
-      var knownImgs = {
-        'AHOHWA WHITENING CREAM NTG (50ml)':'https://cdn.hstatic.net/products/200000343253/ntg_cream_99e12a5d63014628888efa01add81f5a_grande.png',
-        'Acnaut Active Cream (15ml)':'https://biotrade.vn/storage/7y/d4/7yd4t31v5aetwwcv3zbkglwf8lio_cREAM_15ML_N%E1%BB%80N_TR%E1%BA%AENG.png',
-        'Acnaut Active Lotion (15ml)':'https://biotrade.vn/storage/o4/lq/o4lqwb94sgp13nasizzlstj4ze44_S%E1%BA%A3n_ph%E1%BA%A9m_xu_h%C6%B0%E1%BB%9Bng_(180_x_252_px)_(1).png',
-        'Acnaut Active Lotion (60ml)':'https://biotrade.vn/storage/k2/9x/k29xpux4ssdjphumaedjpvxh976h_S%E1%BA%A3n_ph%E1%BA%A9m_xu_h%C6%B0%E1%BB%9Bng_(180_x_252_px).png',
-        'Acnaut Soap For Gentle Cleansing (100g)':'https://biotrade.vn/storage/mw/4q/mw4qr6xqrfb7a8lsvughwlq95hh4_183_x_256-43.webp'
-      };
-
       var allProducts = [];
       var categories = [];
       var openCategories = [];
@@ -494,7 +486,7 @@
       function renderCard(p){
         var bc = brandColors[p.brand] || '#6B7280';
         var bb = brandBgs[p.brand] || '#F3F4F6';
-        var img = knownImgs[p.name] || '';
+        var img = p.img || '';
         var abbr = brandAbbr(p.brand);
         var link = p.shopeeLink || p.link || SHOPEE_FALLBACK;
         return '<div class="pcard">'
