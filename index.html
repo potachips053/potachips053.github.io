@@ -593,7 +593,7 @@
         .then(function(r){ return r.json(); })
         .then(function(raw){
           var primaryCat = function(c){ return decode((c||'').split(',')[0].trim()); };
-          allProducts = raw.products.map(function(p){
+          allProducts = raw.map(function(p){
             return Object.assign({}, p, {
               name: decode(p.name),
               brand: decode(p.brand),
