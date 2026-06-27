@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xịt khoáng/xịt đặc trị · Potachips</title>
+<meta name="description" content="Mỹ phẩm chính hãng · Xịt khoáng/xịt đặc trị — giảm đến 31%, freeship từ 300K.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html,body{overflow-x:hidden}
+  body{font-family:"Be Vietnam Pro",system-ui,-apple-system,sans-serif;background:#FFFDF5;color:#1A1008;scroll-behavior:smooth;line-height:1.5;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
+  a{text-decoration:none;color:inherit}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes slideDown{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+  header{position:sticky;top:0;z-index:200;background:#fff;border-bottom:2px solid #F0DEB4;box-shadow:0 2px 20px rgba(212,150,10,.08)}
+  .header-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;gap:20px;position:relative}
+  .logo{flex:none;display:flex;align-items:center}
+  .logo img{height:44px;object-fit:contain}
+  .nav{display:flex;flex:1;justify-content:center;gap:2px;flex-wrap:wrap}
+  .nav a{padding:7px 12px;font-size:13.5px;font-weight:500;color:#6B4E1A;border-radius:6px;transition:background .15s,color .15s}
+  .nav a:hover{background:#FEF3DC;color:#D4960A}
+  .zalo-link{flex:none;display:flex;align-items:center;gap:7px;font-size:14px;font-weight:700;color:#D4960A;white-space:nowrap;transition:color .15s}
+  .zalo-link:hover{color:#0068FF}
+  .zalo-link img{width:22px;height:22px;object-fit:contain;flex:none}
+  .header-actions{display:flex;align-items:center;gap:8px;margin-left:auto}
+  .mob-zalo-btn{display:none;align-items:center;justify-content:center;width:38px;height:38px;border-radius:8px;background:#EDF3FF}
+  .mob-zalo-btn img{width:24px;height:24px;object-fit:contain}
+  .mob-menu-btn{display:none;align-items:center;justify-content:center;width:40px;height:40px;background:#FEF3DC;border:none;border-radius:8px;cursor:pointer;flex-direction:column;gap:5px;padding:10px;flex:none}
+  .mob-menu-btn span{display:block;width:18px;height:2px;background:#6B4E1A;border-radius:2px}
+  .mob-nav{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:2px solid #F0DEB4;box-shadow:0 8px 24px rgba(0,0,0,.08);animation:slideDown .2s ease;z-index:300;padding:8px 0 12px}
+  .mob-nav.open{display:block}
+  .mob-nav a{display:block;padding:13px 20px;font-size:15px;font-weight:600;color:#6B4E1A}
+  .mob-nav a:active{background:#FEF3DC}
+  .mob-nav-actions{margin:8px 16px 0;padding-top:12px;border-top:1px solid #F0DEB4;display:flex;gap:8px;flex-wrap:wrap}
+  .mob-nav-actions a{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:8px;font-size:13px;font-weight:700}
+  .mob-nav-actions .zalo{background:#EDF3FF;color:#0068FF}
+  .mob-nav-actions .zalo img{width:18px;height:18px;object-fit:contain}
+  .mob-nav-actions .shopee{background:#FFF3F0;color:#EE4D2D}
+  .search-wrap{position:relative;margin-bottom:24px}
+  .search-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:18px;pointer-events:none}
+  .search-input{width:100%;padding:14px 16px 14px 48px;border:2px solid #F0DEB4;border-radius:12px;font-size:15px;font-family:"Be Vietnam Pro",sans-serif;background:#fff;color:#1A1008;outline:none;box-shadow:0 2px 12px rgba(212,150,10,.08);transition:border-color .15s,box-shadow .15s}
+  .search-input:focus{border-color:#D4960A;box-shadow:0 2px 20px rgba(212,150,10,.16)}
+  .search-clear{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;font-size:20px;cursor:pointer;color:#9B8060;padding:6px;line-height:1;display:none}
+  .search-clear:hover{color:#1A1008}
+  .search-info{font-size:13px;color:#6B4E1A;margin-bottom:16px;font-weight:500}
+  .prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;animation:fadeUp .2s ease both}
+  .pcard{background:#fff;border-radius:12px;overflow:hidden;border:1.5px solid #F0DEB4;display:flex;flex-direction:column;transition:all .2s}
+  .pcard:hover{box-shadow:0 6px 24px rgba(212,150,10,.13);transform:translateY(-2px);border-color:#E8C66A}
+  .pcard-img{position:relative;padding-top:88%;overflow:hidden;background:linear-gradient(135deg,#FEF3DC 0%,#FFF8E7 100%)}
+  .pcard-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+  .pcard-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+  .pcard-disc{position:absolute;top:7px;left:7px;background:#E85D2C;color:#fff;font-size:10px;font-weight:800;padding:3px 8px;border-radius:4px;z-index:2}
+  .pcard-body{padding:11px 12px 13px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .pcard-brand-badge{font-size:9px;font-weight:800;padding:2px 7px;border-radius:20px;letter-spacing:.5px;align-self:flex-start}
+  .pcard-name{font-size:12.5px;font-weight:600;color:#1A1008;line-height:1.4;flex:1}
+  .pcard-price{font-size:17px;font-weight:800;color:#D4960A;line-height:1.2}
+  .pcard-shopee-price{font-size:10.5px;color:#9B8060;margin-top:2px}
+  .pcard-shopee-price s{text-decoration:line-through}
+  .pcard-btn{display:flex;align-items:center;justify-content:center;gap:5px;background:#EE4D2D;color:#fff;padding:9px 0;border-radius:7px;font-size:11.5px;font-weight:700;text-decoration:none;min-height:38px;transition:background .15s}
+  .pcard-btn:hover{background:#C93D21}
+  footer{background:#0F0A04;padding:28px 24px;text-align:center}
+  footer img{height:38px;object-fit:contain;margin:0 auto 14px;opacity:.75}
+  footer .l1{font-size:13px;color:#5C3D12;margin:0 0 8px}
+  footer .l2{font-size:12px;color:#3D2A0A;margin:0}
+  .mob-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:300;background:#fff;border-top:1.5px solid #F0DEB4;box-shadow:0 -4px 20px rgba(0,0,0,.1);padding:10px 12px;gap:8px;align-items:center}
+  .mob-cta a{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 8px;border-radius:10px;font-size:13px;font-weight:700;min-height:44px}
+  .mob-cta .zalo{background:#EDF3FF;border:1.5px solid #0068FF;color:#0068FF}
+  .mob-cta .zalo img{width:20px;height:20px;object-fit:contain}
+  .mob-cta .shopee{background:#EE4D2D;color:#fff}
+  @media(max-width:640px){
+    .header-inner{padding:0 16px;height:56px}
+    .logo img{height:36px}
+    .nav,.zalo-link{display:none}
+    .mob-zalo-btn,.mob-menu-btn{display:flex}
+    .prod-grid{grid-template-columns:repeat(2,1fr);gap:8px}
+    .pcard-body{padding:9px 10px 11px}
+    .pcard-name{font-size:11.5px}
+    .pcard-price{font-size:15px}
+    .pcard-btn{padding:8px 0;font-size:11px}
+    body{padding-bottom:64px}
+    .mob-cta{display:flex}
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="Trang chủ">
+        <img src="../uploads/logo-1782118237044.jpg" alt="Logo">
+      </a>
+      <nav class="nav">
+        <a href="/#about">Giới thiệu</a>
+        <a href="/#products-section">Danh mục</a>
+        <a href="/#contact">Liên hệ</a>
+      </nav>
+      <a href="https://zalo.me/0899200899" target="_blank" rel="noopener" class="zalo-link">
+        <img src="../uploads/pasted-1782143414908-0.png" alt="Zalo">
+        0899 200 899
+      </a>
+      <div class="header-actions">
+        <a href="https://zalo.me/0899200899" target="_blank" rel="noopener" class="mob-zalo-btn" aria-label="Zalo">
+          <img src="../uploads/pasted-1782143414908-0.png" alt="Zalo">
+        </a>
+        <button class="mob-menu-btn" aria-label="Menu" aria-expanded="false" onclick="toggleMobNav(this)">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div id="mob-nav" class="mob-nav">
+        <a href="/#about" onclick="closeMobNav()">Giới thiệu</a>
+        <a href="/#products-section" onclick="closeMobNav()">Danh mục</a>
+        <a href="/#contact" onclick="closeMobNav()">Liên hệ</a>
+        <div class="mob-nav-actions">
+          <a class="zalo" href="https://zalo.me/0899200899" target="_blank" rel="noopener">
+            <img src="../uploads/pasted-1782143414908-0.png" alt="Zalo">0899 200 899
+          </a>
+          <a class="shopee" href="https://shopee.vn/rosia_cosmetics" target="_blank" rel="noopener">🛒 Shopee</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div style="background:#fff;border-bottom:1px solid #F0DEB4;padding:10px 24px;">
+    <div style="max-width:1200px;margin:0 auto;">
+      <a href="/" style="font-size:13px;font-weight:600;color:#6B4E1A;display:inline-flex;align-items:center;gap:5px;">← Tất cả danh mục</a>
+    </div>
+  </div>
+
+  <div style="background:linear-gradient(135deg,#FEF3DC,#FFFDF5);padding:28px 24px 24px;text-align:center;border-bottom:1px solid #F0DEB4;">
+    <div style="font-size:38px;margin-bottom:8px;">💨</div>
+    <h1 style="font-size:22px;font-weight:800;color:#1A1008;margin:0 0 6px;">Xịt khoáng/xịt đặc trị</h1>
+    <p id="cat-count-text" style="font-size:13px;color:#6B4E1A;font-weight:500;">Đang tải...</p>
+  </div>
+
+  <section style="padding:28px 24px 72px;">
+    <div style="max-width:1200px;margin:0 auto;">
+
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input id="search-input" class="search-input" type="text" placeholder="Tìm trong danh mục..." oninput="onSearch(this.value)" autocomplete="off">
+        <button id="search-clear" class="search-clear" onclick="clearSearch()" aria-label="Xoá">×</button>
+      </div>
+
+      <div id="search-panel" style="display:none;animation:fadeUp .2s ease both;"></div>
+      <div id="prod-grid" class="prod-grid"></div>
+
+    </div>
+  </section>
+
+  <footer>
+    <img src="../uploads/logo-1782118237044.jpg" alt="Logo">
+    <p class="l1">Mỹ phẩm chính hãng · Giao hàng toàn quốc</p>
+    <p class="l2">© 2025 · Liên hệ: 0899 200 899 · gkieu204@gmail.com</p>
+  </footer>
+
+  <div class="mob-cta">
+    <a href="https://zalo.me/0899200899" target="_blank" rel="noopener" class="zalo">
+      <img src="../uploads/pasted-1782143414908-0.png" alt="Zalo">Zalo tư vấn
+    </a>
+    <a href="https://shopee.vn/rosia_cosmetics" target="_blank" rel="noopener" class="shopee">🛒 Mua trên Shopee</a>
+  </div>
+
+  <script>
+    var CATEGORY = 'Xịt khoáng/xịt đặc trị';
+    var SHOPEE_FALLBACK = 'https://shopee.vn/rosia_cosmetics';
+    var allProducts = [];
+
+    var brandColors = {'AHOHWA':'#7C3AED','BIOTRADE':'#2563EB','VICDERMA':'#0EA5E9','PHARMAFORM':'#059669','ICON SKIN':'#D97706','CASMARA':'#DB2777','BABE':'#DC2626','EKSEPTION':'#7C3AED','OH OH':'#EA580C','MD CARE':'#0891B2','OBAGI':'#4F46E5','MAXCLINIC':'#B45309','KYUNGLAB':'#65A30D','THERAMID':'#0D9488','ACNEMY':'#E11D48','LOCCITANE':'#9333EA','CNP':'#DB2777','THE WHOO HISTORY':'#B7880C','BELIF':'#16A34A','AHC':'#2563EB','HYAESTICS':'#4F46E5','HYAESTIC':'#4F46E5'};
+    var brandBgs   = {'AHOHWA':'#F5F0FF','BIOTRADE':'#EFF6FF','VICDERMA':'#E0F2FE','PHARMAFORM':'#ECFDF5','ICON SKIN':'#FFFBEB','CASMARA':'#FDF2F8','BABE':'#FEF2F2','EKSEPTION':'#F5F3FF','OH OH':'#FFF7ED','MD CARE':'#ECFEFF','OBAGI':'#EEF2FF','MAXCLINIC':'#FFFBEB','KYUNGLAB':'#F7FEE7','THERAMID':'#F0FDFA','ACNEMY':'#FFF1F2','LOCCITANE':'#FAF5FF','CNP':'#FDF2F8','THE WHOO HISTORY':'#FEFCE8','BELIF':'#F0FDF4','AHC':'#EFF6FF','HYAESTICS':'#EEF2FF','HYAESTIC':'#EEF2FF'};
+
+    function decode(s){ return (s||'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"'); }
+    function fmtPrice(n){ return n > 0 ? n.toLocaleString('vi-VN') + 'đ' : ''; }
+    function brandAbbr(brand){
+      var words = brand.replace(/[^A-Za-z\s]/g,'').split(/\s+/).filter(Boolean);
+      return words.length >= 2 ? words.slice(0,2).map(function(w){return w[0].toUpperCase();}).join('') : brand.substring(0,2).toUpperCase();
+    }
+    function escAttr(s){ return s.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+    function renderCard(p){
+      var bc = brandColors[p.brand] || '#6B7280';
+      var bb = brandBgs[p.brand]   || '#F3F4F6';
+      var img = p.img ? '../' + p.img : '';
+      var abbr = brandAbbr(p.brand);
+      var link = p.shopeeLink || p.link || SHOPEE_FALLBACK;
+      return '<div class="pcard">'
+        + '<div class="pcard-img">'
+        + '<div class="pcard-ph">'
+        + '<div style="width:52px;height:52px;border-radius:50%;background:' + bb + ';display:flex;align-items:center;justify-content:center;">'
+        + '<span style="font-size:20px;font-weight:900;color:' + bc + ';opacity:.7;line-height:1;">' + abbr + '</span></div>'
+        + '<div style="font-size:8px;font-weight:700;color:' + bc + ';opacity:.55;text-transform:uppercase;letter-spacing:1.2px;text-align:center;padding:0 8px;line-height:1.3;">' + escAttr(p.brand) + '</div>'
+        + '</div>'
+        + (img ? '<img src="' + img + '" alt="' + escAttr(p.name) + '" loading="lazy">' : '')
+        + (p.savePct > 0 ? '<div class="pcard-disc">Rẻ hơn ' + p.savePct + '%</div>' : '')
+        + '</div>'
+        + '<div class="pcard-body">'
+        + '<span class="pcard-brand-badge" style="background:' + bb + ';color:' + bc + ';">' + escAttr(p.brand) + '</span>'
+        + '<div class="pcard-name">' + escAttr(p.name) + '</div>'
+        + '<div><div class="pcard-price">' + fmtPrice(p.webPrice) + '</div>'
+        + (p.shopeePrice > 0 ? '<div class="pcard-shopee-price">Shopee: <s>' + fmtPrice(p.shopeePrice) + '</s></div>' : '')
+        + '</div>'
+        + '<a href="' + escAttr(link) + '" target="_blank" rel="noopener" class="pcard-btn">🛒 Xem trên Shopee</a>'
+        + '</div></div>';
+    }
+
+    function renderAll(products){
+      var grid = document.getElementById('prod-grid');
+      if (!grid) return;
+      grid.innerHTML = products.length
+        ? products.map(renderCard).join('')
+        : '<div style="text-align:center;padding:40px;color:#9B8060;">Không có sản phẩm nào.</div>';
+    }
+
+    function onSearch(val){
+      var clearBtn = document.getElementById('search-clear');
+      var grid = document.getElementById('prod-grid');
+      var panel = document.getElementById('search-panel');
+      if (clearBtn) clearBtn.style.display = val ? 'block' : 'none';
+      if (!val.trim()) {
+        if (panel) panel.style.display = 'none';
+        if (grid) grid.style.display = '';
+        return;
+      }
+      if (grid) grid.style.display = 'none';
+      var q = val.toLowerCase().trim();
+      var found = allProducts.filter(function(p){
+        return p.name.toLowerCase().indexOf(q) >= 0 || p.brand.toLowerCase().indexOf(q) >= 0;
+      });
+      var html = '<div class="search-info">Tìm thấy <strong>' + found.length + '</strong> sản phẩm</div>';
+      if (found.length === 0) {
+        html += '<div style="text-align:center;padding:40px;color:#9B8060;"><div style="font-size:36px;margin-bottom:12px;">🔍</div><div style="font-size:15px;font-weight:600;margin-bottom:8px;">Không tìm thấy</div><div>Thử tên thương hiệu hoặc công dụng</div></div>';
+      } else {
+        html += '<div class="prod-grid">' + found.map(renderCard).join('') + '</div>';
+      }
+      if (panel) { panel.innerHTML = html; panel.style.display = 'block'; }
+    }
+
+    function clearSearch(){
+      var inp = document.getElementById('search-input');
+      if (inp) inp.value = '';
+      onSearch('');
+    }
+
+    function toggleMobNav(btn){
+      var nav = document.getElementById('mob-nav');
+      var open = nav.classList.toggle('open');
+      if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    function closeMobNav(){
+      document.getElementById('mob-nav').classList.remove('open');
+      var btn = document.querySelector('.mob-menu-btn');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    }
+
+    fetch('../products_full.json')
+      .then(function(r){ return r.json(); })
+      .then(function(raw){
+        var primaryCat = function(c){ return decode((c||'').split(',')[0].trim()); };
+        allProducts = raw.map(function(p){
+          return Object.assign({}, p, {
+            name: decode(p.name),
+            brand: decode(p.brand),
+            category: primaryCat(p.category),
+            shopeePrice: p.shopeePrice > 100 ? p.shopeePrice : 0,
+            savePct: (p.shopeePrice > 100 && p.savePct > 0 && p.savePct < 80) ? p.savePct : 0
+          });
+        }).filter(function(p){ return p.category === CATEGORY; });
+        var countEl = document.getElementById('cat-count-text');
+        if (countEl) countEl.textContent = allProducts.length + ' sản phẩm';
+        renderAll(allProducts);
+      })
+      .catch(function(){
+        var grid = document.getElementById('prod-grid');
+        if (grid) grid.innerHTML = '<div style="text-align:center;padding:40px;color:#9B8060;">Không thể tải sản phẩm. Vui lòng thử lại.</div>';
+      });
+  </script>
+
+</body>
+</html>

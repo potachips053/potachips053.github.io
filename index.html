@@ -58,57 +58,23 @@
   .kicker{font-size:12px;font-weight:700;color:#D4960A;letter-spacing:2px;margin-bottom:12px;text-transform:uppercase}
 
   /* products catalog */
-  #products-section{background:linear-gradient(180deg,#FEF3DC 0%,#FFFDF5 60%);padding:64px 24px 80px}
+  #products-section{background:linear-gradient(180deg,#FEF3DC 0%,#FFFDF5 60%);padding:48px 24px 64px}
   .products-inner{max-width:1200px;margin:0 auto}
-  .section-hdr{text-align:center;margin-bottom:32px}
+  .section-hdr{text-align:center;margin-bottom:28px}
   .section-hdr .kicker{margin-bottom:8px}
   .section-hdr h2{font-size:28px;font-weight:800;color:#1A1008;margin:0 0 8px}
   .section-hdr p{font-size:13.5px;color:#6B4E1A;margin:0}
 
-  /* search */
-  .search-wrap{position:relative;margin-bottom:28px}
-  .search-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:18px;pointer-events:none}
-  .search-input{width:100%;padding:14px 16px 14px 48px;border:2px solid #F0DEB4;border-radius:12px;font-size:15px;font-family:'Be Vietnam Pro',sans-serif;background:#fff;color:#1A1008;outline:none;box-shadow:0 2px 12px rgba(212,150,10,.08);transition:border-color .15s,box-shadow .15s}
-  .search-input:focus{border-color:#D4960A;box-shadow:0 2px 20px rgba(212,150,10,.16)}
-  .search-clear{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;font-size:20px;cursor:pointer;color:#9B8060;padding:6px;line-height:1;display:none}
-  .search-clear:hover{color:#1A1008}
-
-  /* search results */
-  #search-results{display:none;animation:fadeUp .2s ease both}
-  .search-info{font-size:13px;color:#6B4E1A;margin-bottom:16px;font-weight:500}
-  .no-results{text-align:center;padding:48px 24px;color:#9B8060}
-  .no-results .nr-icon{font-size:36px;margin-bottom:12px}
-  .no-results .nr-title{font-size:15px;font-weight:600;margin-bottom:8px}
-
-  /* accordion */
-  .accordion{display:flex;flex-direction:column;gap:8px}
-  .acc-item{background:#fff;border-radius:14px;border:1.5px solid #F0DEB4;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.04)}
-  .acc-btn{width:100%;display:flex;align-items:center;gap:12px;padding:16px 20px;background:none;border:none;cursor:pointer;text-align:left;transition:background .15s}
-  .acc-btn:hover{background:#FFFAF0}
-  .acc-icon{font-size:22px;flex:none}
-  .acc-name{flex:1;font-size:15px;font-weight:700;color:#1A1008}
-  .acc-count{background:#FEF3DC;color:#D4960A;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;flex:none}
-  .acc-arrow{font-size:20px;color:#D4960A;font-weight:300;flex:none;transition:transform .2s;display:inline-block}
-  .acc-body{padding:4px 16px 20px;border-top:1px solid #F0DEB4;animation:fadeUp .2s ease both}
-
-  /* product grid */
-  .prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:16px}
-
-  /* product card */
-  .pcard{background:#fff;border-radius:12px;overflow:hidden;border:1.5px solid #F0DEB4;display:flex;flex-direction:column;transition:all .2s}
-  .pcard:hover{box-shadow:0 6px 24px rgba(212,150,10,.13);transform:translateY(-2px);border-color:#E8C66A}
-  .pcard-img{position:relative;padding-top:88%;overflow:hidden;background:linear-gradient(135deg,#FEF3DC 0%,#FFF8E7 100%)}
-  .pcard-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
-  .pcard-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}
-  .pcard-disc{position:absolute;top:7px;left:7px;background:#E85D2C;color:#fff;font-size:10px;font-weight:800;padding:3px 8px;border-radius:4px;z-index:2}
-  .pcard-body{padding:11px 12px 13px;display:flex;flex-direction:column;gap:8px;flex:1}
-  .pcard-brand-badge{font-size:9px;font-weight:800;padding:2px 7px;border-radius:20px;letter-spacing:.5px;align-self:flex-start}
-  .pcard-name{font-size:12.5px;font-weight:600;color:#1A1008;line-height:1.4;flex:1}
-  .pcard-price{font-size:17px;font-weight:800;color:#D4960A;line-height:1.2}
-  .pcard-shopee-price{font-size:10.5px;color:#9B8060;margin-top:2px}
-  .pcard-shopee-price s{text-decoration:line-through}
-  .pcard-btn{display:flex;align-items:center;justify-content:center;gap:5px;background:#EE4D2D;color:#fff;padding:9px 0;border-radius:7px;font-size:11.5px;font-weight:700;text-decoration:none;min-height:38px;transition:background .15s}
-  .pcard-btn:hover{background:#C93D21}
+  /* category grid */
+  .cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+  .cat-card{display:flex;align-items:center;gap:14px;padding:16px 18px;background:#fff;border:1.5px solid #F0DEB4;border-radius:14px;text-decoration:none;color:inherit;transition:all .2s;box-shadow:0 1px 6px rgba(0,0,0,.04)}
+  .cat-card:hover{box-shadow:0 6px 24px rgba(212,150,10,.13);transform:translateY(-2px);border-color:#E8C66A}
+  .cat-card-icon{font-size:26px;flex:none;line-height:1}
+  .cat-card-body{flex:1;min-width:0}
+  .cat-card-name{font-size:13px;font-weight:700;color:#1A1008;line-height:1.35;margin-bottom:2px}
+  .cat-card-count{font-size:11.5px;color:#9B8060}
+  .cat-card-arrow{font-size:18px;color:#D4960A;flex:none;transition:transform .2s}
+  .cat-card:hover .cat-card-arrow{transform:translateX(3px)}
 
   /* contact */
   #contact{background:linear-gradient(140deg,#1A1008,#2C1A06);padding:72px 24px}
@@ -157,14 +123,8 @@
     #contact h2{font-size:22px}
     .kicker{font-size:11px}
 
-    #products-section{padding:40px 16px 60px}
-    .prod-grid{grid-template-columns:repeat(2,1fr);gap:8px}
-    .pcard-body{padding:9px 10px 11px}
-    .pcard-name{font-size:11.5px}
-    .pcard-price{font-size:15px}
-    .pcard-btn{padding:8px 0;font-size:11px}
-    .acc-btn{padding:14px 16px}
-    .acc-body{padding:4px 12px 16px}
+    #products-section{padding:32px 16px 48px}
+    .cat-grid{grid-template-columns:1fr}
 
     .contact-grid{grid-template-columns:repeat(2,1fr)}
 
@@ -348,19 +308,11 @@
       <div class="section-hdr">
         <div class="kicker">📦 Danh Mục Sản Phẩm</div>
         <h2><span class="dyn-products">139</span> Sản Phẩm Chính Hãng</h2>
-        <p>Giá website luôn rẻ hơn giá Shopee niêm yết — đặt hàng qua Zalo hoặc Shopee shop</p>
+        <p>Chọn danh mục để xem sản phẩm — giá luôn rẻ hơn Shopee</p>
       </div>
 
-      <div class="search-wrap">
-        <span class="search-icon">🔍</span>
-        <input id="search-input" class="search-input" type="text" placeholder="Tìm kiếm sản phẩm..." oninput="onProductSearch(this.value)" autocomplete="off">
-        <button id="search-clear" class="search-clear" onclick="clearProductSearch()" aria-label="Xoá">×</button>
-      </div>
-
-      <div id="search-results"></div>
-
-      <div id="acc-container" class="accordion">
-        <div style="text-align:center;padding:40px;color:#9B8060;font-size:14px;">Đang tải sản phẩm...</div>
+      <div id="cat-grid" class="cat-grid">
+        <div style="text-align:center;padding:40px;color:#9B8060;font-size:14px;grid-column:1/-1;">Đang tải...</div>
       </div>
 
     </div>
@@ -444,27 +396,24 @@
       if (btn) btn.setAttribute('aria-expanded', 'false');
     }
 
-    // ── Product catalog ─────────────────────────────────────────
+    // ── Category grid ────────────────────────────────────────────
     (function(){
-      var SHOPEE_FALLBACK = 'https://shopee.vn/rosia_cosmetics';
-
-      var brandColors = {
-        'AHOHWA':'#7C3AED','BIOTRADE':'#2563EB','VICDERMA':'#0EA5E9',
-        'PHARMAFORM':'#059669','ICON SKIN':'#D97706','CASMARA':'#DB2777',
-        'BABE':'#DC2626','EKSEPTION':'#7C3AED','OH OH':'#EA580C',
-        'MD CARE':'#0891B2','OBAGI':'#4F46E5','MAXCLINIC':'#B45309',
-        'KYUNGLAB':'#65A30D','THERAMID':'#0D9488','ACNEMY':'#E11D48',
-        'LOCCITANE':'#9333EA','CNP':'#DB2777','THE WHOO HISTORY':'#B7880C',
-        'BELIF':'#16A34A','AHC':'#2563EB','HYAESTICS':'#4F46E5','HYAESTIC':'#4F46E5'
-      };
-      var brandBgs = {
-        'AHOHWA':'#F5F0FF','BIOTRADE':'#EFF6FF','VICDERMA':'#E0F2FE',
-        'PHARMAFORM':'#ECFDF5','ICON SKIN':'#FFFBEB','CASMARA':'#FDF2F8',
-        'BABE':'#FEF2F2','EKSEPTION':'#F5F3FF','OH OH':'#FFF7ED',
-        'MD CARE':'#ECFEFF','OBAGI':'#EEF2FF','MAXCLINIC':'#FFFBEB',
-        'KYUNGLAB':'#F7FEE7','THERAMID':'#F0FDFA','ACNEMY':'#FFF1F2',
-        'LOCCITANE':'#FAF5FF','CNP':'#FDF2F8','THE WHOO HISTORY':'#FEFCE8',
-        'BELIF':'#F0FDF4','AHC':'#EFF6FF','HYAESTICS':'#EEF2FF','HYAESTIC':'#EEF2FF'
+      var catSlugs = {
+        'Serum làm sáng/cấp ẩm/phục hồi':'serum',
+        'Mặt nạ':'mat-na',
+        'Kem cấp ẩm/phục hồi':'kem-cap-am',
+        'Kem/serum mụn':'kem-mun',
+        'Chống lão hóa':'chong-lao-hoa',
+        'Chăm sóc cơ thể':'cham-soc-co-the',
+        'Thực phẩm chức năng':'thuc-pham',
+        'Tẩy trang & sữa rửa mặt':'tay-trang',
+        'Chống nắng - vật lí/hóa học':'chong-nang',
+        'Tinh chất tái tạo da':'tinh-chat',
+        'Xịt khoáng/xịt đặc trị':'xit-khoang',
+        'Kem mắt':'kem-mat',
+        'Tẩy da chết':'tay-da-chet',
+        'Toner':'toner',
+        'Mỹ phẩm High-end':'high-end'
       };
       var catIcons = {
         'Serum làm sáng/cấp ẩm/phục hồi':'💧','Mặt nạ':'🌿',
@@ -475,167 +424,55 @@
         'Xịt khoáng/xịt đặc trị':'💨','Kem mắt':'👁️',
         'Tẩy da chết':'🌸','Toner':'💦','Mỹ phẩm High-end':'👑'
       };
-      var allProducts = [];
-      var categories = [];
-      var openCategories = [];
-      var searchQuery = '';
 
       function decode(s){
         return (s||'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"');
-      }
-      function fmtPrice(n){
-        return n > 0 ? n.toLocaleString('vi-VN') + 'đ' : '';
-      }
-      function brandAbbr(brand){
-        var words = brand.replace(/[^A-Za-z\s]/g,'').split(/\s+/).filter(Boolean);
-        return words.length >= 2
-          ? words.slice(0,2).map(function(w){return w[0].toUpperCase();}).join('')
-          : brand.substring(0,2).toUpperCase();
       }
       function escAttr(s){
         return s.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
       }
 
-      function renderCard(p){
-        var bc = brandColors[p.brand] || '#6B7280';
-        var bb = brandBgs[p.brand] || '#F3F4F6';
-        var img = p.img || '';
-        var abbr = brandAbbr(p.brand);
-        var link = p.shopeeLink || p.link || SHOPEE_FALLBACK;
-        return '<div class="pcard">'
-          + '<div class="pcard-img">'
-          + '<div class="pcard-ph">'
-          + '<div style="width:52px;height:52px;border-radius:50%;background:' + bb + ';display:flex;align-items:center;justify-content:center;">'
-          + '<span style="font-size:20px;font-weight:900;color:' + bc + ';opacity:.7;line-height:1;">' + abbr + '</span>'
-          + '</div>'
-          + '<div style="font-size:8px;font-weight:700;color:' + bc + ';opacity:.55;text-transform:uppercase;letter-spacing:1.2px;text-align:center;padding:0 8px;line-height:1.3;">' + escAttr(p.brand) + '</div>'
-          + '</div>'
-          + (img ? '<img src="' + img + '" alt="' + escAttr(p.name) + '" loading="lazy">' : '')
-          + (p.savePct > 0 ? '<div class="pcard-disc">Rẻ hơn ' + p.savePct + '%</div>' : '')
-          + '</div>'
-          + '<div class="pcard-body">'
-          + '<span class="pcard-brand-badge" style="background:' + bb + ';color:' + bc + ';">' + escAttr(p.brand) + '</span>'
-          + '<div class="pcard-name">' + escAttr(p.name) + '</div>'
-          + '<div>'
-          + '<div class="pcard-price">' + fmtPrice(p.webPrice) + '</div>'
-          + (p.shopeePrice > 0 ? '<div class="pcard-shopee-price">Shopee: <s>' + fmtPrice(p.shopeePrice) + '</s></div>' : '')
-          + '</div>'
-          + '<a href="' + escAttr(link) + '" target="_blank" rel="noopener" class="pcard-btn">🛒 Xem trên Shopee</a>'
-          + '</div>'
-          + '</div>';
-      }
-
-      function renderAccordion(){
-        var container = document.getElementById('acc-container');
-        if (!container) return;
-        var html = '';
-        categories.forEach(function(cat){
-          var prods = allProducts.filter(function(p){ return p.category === cat; });
-          var isOpen = openCategories.indexOf(cat) >= 0;
-          var icon = catIcons[cat] || '📦';
-          var safeId = 'cat-' + cat.replace(/[^a-z0-9]/gi,'_');
-          html += '<div class="acc-item">'
-            + '<button class="acc-btn" onclick="window._toggleCat(\'' + safeId + '\')" aria-expanded="' + isOpen + '">'
-            + '<span class="acc-icon">' + icon + '</span>'
-            + '<span class="acc-name">' + escAttr(cat) + '</span>'
-            + '<span class="acc-count">' + prods.length + ' sp</span>'
-            + '<span class="acc-arrow" style="transform:' + (isOpen ? 'rotate(90deg)' : 'rotate(0deg)') + '">›</span>'
-            + '</button>';
-          if (isOpen) {
-            html += '<div class="acc-body"><div class="prod-grid">' + prods.map(renderCard).join('') + '</div></div>';
-          }
-          html += '</div>';
-        });
-        container.innerHTML = html;
-      }
-
-      window._catMap = {};
-      window._toggleCat = function(safeId){
-        var cat = window._catMap[safeId];
-        if (!cat) return;
-        var idx = openCategories.indexOf(cat);
-        if (idx >= 0) openCategories.splice(idx, 1);
-        else openCategories.push(cat);
-        renderAccordion();
-      };
-
-      function renderSearchResults(q){
-        var results = allProducts.filter(function(p){
-          return p.name.toLowerCase().indexOf(q) >= 0 || p.brand.toLowerCase().indexOf(q) >= 0;
-        });
-        var html = '<div class="search-info">Tìm thấy <strong>' + results.length + '</strong> sản phẩm cho "<span style="color:#D4960A;">' + escAttr(q) + '</span>"</div>';
-        if (results.length === 0) {
-          html += '<div class="no-results"><div class="nr-icon">🔍</div><div class="nr-title">Không tìm thấy sản phẩm</div><div>Thử tìm bằng tên thương hiệu hoặc công dụng</div></div>';
-        } else {
-          html += '<div class="prod-grid">' + results.map(renderCard).join('') + '</div>';
-        }
-        return html;
-      }
-
-      window.onProductSearch = function(val){
-        searchQuery = val;
-        var clearBtn = document.getElementById('search-clear');
-        var accordion = document.getElementById('acc-container');
-        var searchResults = document.getElementById('search-results');
-        if (clearBtn) clearBtn.style.display = searchQuery ? 'block' : 'none';
-        if (searchQuery.trim()) {
-          if (accordion) accordion.style.display = 'none';
-          if (searchResults) {
-            searchResults.style.display = 'block';
-            searchResults.innerHTML = renderSearchResults(searchQuery.toLowerCase().trim());
-          }
-        } else {
-          if (accordion) accordion.style.display = 'flex';
-          if (searchResults) searchResults.style.display = 'none';
-        }
-      };
-
-      window.clearProductSearch = function(){
-        var inp = document.getElementById('search-input');
-        if (inp) inp.value = '';
-        searchQuery = '';
-        var clearBtn = document.getElementById('search-clear');
-        var accordion = document.getElementById('acc-container');
-        var searchResults = document.getElementById('search-results');
-        if (clearBtn) clearBtn.style.display = 'none';
-        if (accordion) accordion.style.display = 'flex';
-        if (searchResults) searchResults.style.display = 'none';
-      };
-
       fetch('products_full.json')
         .then(function(r){ return r.json(); })
         .then(function(raw){
           var primaryCat = function(c){ return decode((c||'').split(',')[0].trim()); };
-          allProducts = raw.map(function(p){
-            return Object.assign({}, p, {
-              name: decode(p.name),
-              brand: decode(p.brand),
-              category: primaryCat(p.category),
-              shopeePrice: p.shopeePrice > 100 ? p.shopeePrice : 0,
-              savePct: (p.shopeePrice > 100 && p.savePct > 0 && p.savePct < 80) ? p.savePct : 0
-            });
+          var products = raw.map(function(p){
+            return { category: primaryCat(p.category), brand: decode(p.brand) };
           });
-          var cats = [];
-          allProducts.forEach(function(p){ if (cats.indexOf(p.category) < 0) cats.push(p.category); });
-          categories = cats;
-          openCategories = cats.length > 0 ? [cats[0]] : [];
 
-          cats.forEach(function(cat){
-            var safeId = 'cat-' + cat.replace(/[^a-z0-9]/gi,'_');
-            window._catMap[safeId] = cat;
+          var catCounts = {};
+          var catOrder = [];
+          products.forEach(function(p){
+            if (!catCounts[p.category]) { catCounts[p.category] = 0; catOrder.push(p.category); }
+            catCounts[p.category]++;
           });
 
           var brands = [];
-          allProducts.forEach(function(p){ if (brands.indexOf(p.brand) < 0) brands.push(p.brand); });
-
-          document.querySelectorAll('.dyn-products').forEach(function(el){ el.textContent = allProducts.length; });
+          products.forEach(function(p){ if (brands.indexOf(p.brand) < 0) brands.push(p.brand); });
+          document.querySelectorAll('.dyn-products').forEach(function(el){ el.textContent = raw.length; });
           document.querySelectorAll('.dyn-brands').forEach(function(el){ el.textContent = brands.length; });
 
-          renderAccordion();
+          var grid = document.getElementById('cat-grid');
+          if (!grid) return;
+          var html = '';
+          catOrder.forEach(function(cat){
+            var slug = catSlugs[cat];
+            if (!slug) return;
+            var icon = catIcons[cat] || '📦';
+            html += '<a href="/' + slug + '/" class="cat-card">'
+              + '<span class="cat-card-icon">' + icon + '</span>'
+              + '<span class="cat-card-body">'
+              + '<span class="cat-card-name">' + escAttr(cat) + '</span>'
+              + '<span class="cat-card-count">' + catCounts[cat] + ' sản phẩm</span>'
+              + '</span>'
+              + '<span class="cat-card-arrow">›</span>'
+              + '</a>';
+          });
+          grid.innerHTML = html;
         })
         .catch(function(){
-          var container = document.getElementById('acc-container');
-          if (container) container.innerHTML = '<div style="text-align:center;padding:40px;color:#9B8060;font-size:14px;">Không thể tải danh sách sản phẩm. Vui lòng liên hệ qua Zalo để được hỗ trợ.</div>';
+          var grid = document.getElementById('cat-grid');
+          if (grid) grid.innerHTML = '<div style="text-align:center;padding:40px;color:#9B8060;font-size:14px;grid-column:1/-1;">Không thể tải danh mục. Vui lòng liên hệ qua Zalo.</div>';
         });
     })();
   </script>
