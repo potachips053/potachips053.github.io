@@ -76,6 +76,65 @@
   .cat-card-arrow{font-size:18px;color:#D4960A;flex:none;transition:transform .2s}
   .cat-card:hover .cat-card-arrow{transform:translateX(3px)}
 
+  /* product cards (shared: flash sale + all products) */
+  .prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+  .pcard{background:#fff;border-radius:12px;overflow:hidden;border:1.5px solid #F0DEB4;display:flex;flex-direction:column;transition:all .2s}
+  .pcard:hover{box-shadow:0 6px 24px rgba(212,150,10,.13);transform:translateY(-2px);border-color:#E8C66A}
+  .pcard-img{position:relative;padding-top:88%;overflow:hidden;background:linear-gradient(135deg,#FEF3DC 0%,#FFF8E7 100%)}
+  .pcard-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+  .pcard-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+  .pcard-disc{position:absolute;top:7px;left:7px;background:#E85D2C;color:#fff;font-size:10px;font-weight:800;padding:3px 8px;border-radius:4px;z-index:2}
+  .pcard-flash{position:absolute;top:7px;right:7px;background:linear-gradient(135deg,#FF6B35,#E11D48);color:#fff;font-size:10px;font-weight:800;padding:3px 8px;border-radius:4px;z-index:2;display:flex;align-items:center;gap:3px}
+  .pcard-body{padding:11px 12px 13px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .pcard-brand-badge{font-size:9px;font-weight:800;padding:2px 7px;border-radius:20px;letter-spacing:.5px;align-self:flex-start}
+  .pcard-name{font-size:12.5px;font-weight:600;color:#1A1008;line-height:1.4;flex:1}
+  .pcard-price{font-size:17px;font-weight:800;color:#D4960A;line-height:1.2}
+  .pcard-shopee-price{font-size:10.5px;color:#9B8060;margin-top:2px}
+  .pcard-shopee-price s{text-decoration:line-through}
+  .pcard-btn{display:flex;align-items:center;justify-content:center;gap:5px;background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff;padding:9px 0;border-radius:7px;font-size:11.5px;font-weight:700;text-decoration:none;min-height:38px;transition:filter .15s}
+  .pcard-btn:hover{filter:brightness(1.08)}
+
+  /* flash sale */
+  #flash-sale{padding:44px 24px 8px}
+  .flash-inner{max-width:1200px;margin:0 auto}
+  .flash-hdr{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#FF6B35,#E11D48);border-radius:16px;padding:18px 22px;margin-bottom:22px;box-shadow:0 8px 28px rgba(225,29,72,.25)}
+  .flash-hdr .fs-ic{font-size:34px;line-height:1;flex:none;animation:flashpulse 1.4s ease-in-out infinite}
+  @keyframes flashpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+  .flash-hdr h2{font-size:24px;font-weight:800;color:#fff;margin:0;line-height:1.2}
+  .flash-hdr p{font-size:13px;color:rgba(255,255,255,.92);margin:3px 0 0}
+
+  /* all products */
+  #all-products{background:linear-gradient(180deg,#FFFDF5 0%,#FEF3DC 100%);padding:16px 24px 64px}
+  .all-inner{max-width:1200px;margin:0 auto}
+  .search-wrap{position:relative;margin:0 0 20px}
+  .search-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:18px;pointer-events:none}
+  .search-input{width:100%;padding:14px 16px 14px 48px;border:2px solid #F0DEB4;border-radius:12px;font-size:15px;font-family:'Be Vietnam Pro',sans-serif;background:#fff;color:#1A1008;outline:none;box-shadow:0 2px 12px rgba(212,150,10,.08);transition:border-color .15s,box-shadow .15s}
+  .search-input:focus{border-color:#D4960A;box-shadow:0 2px 20px rgba(212,150,10,.16)}
+  .search-clear{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;font-size:20px;cursor:pointer;color:#9B8060;padding:6px;line-height:1;display:none}
+  .search-clear:hover{color:#1A1008}
+  .search-info{font-size:13px;color:#6B4E1A;margin-bottom:16px;font-weight:500}
+
+  /* sidebar drawer */
+  .sidebar-toggle{display:inline-flex;align-items:center;gap:7px;flex:none;background:#FEF3DC;border:1.5px solid #F0DEB4;color:#6B4E1A;font-family:inherit;font-size:13.5px;font-weight:700;padding:8px 14px;border-radius:8px;cursor:pointer;transition:background .15s,color .15s}
+  .sidebar-toggle:hover{background:#FCE9C0;color:#D4960A}
+  .sidebar-overlay{position:fixed;inset:0;background:rgba(26,16,8,.45);z-index:400;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+  .sidebar-overlay.open{opacity:1;visibility:visible}
+  .sidebar{position:fixed;top:0;left:0;bottom:0;width:300px;max-width:85vw;background:#fff;z-index:401;transform:translateX(-100%);transition:transform .28s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;box-shadow:4px 0 30px rgba(0,0,0,.15)}
+  .sidebar.open{transform:translateX(0)}
+  .sidebar-head{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1.5px solid #F0DEB4;flex:none}
+  .sidebar-head span{font-size:16px;font-weight:800;color:#1A1008}
+  .sidebar-close{background:none;border:none;font-size:26px;line-height:1;color:#9B8060;cursor:pointer;padding:0 4px}
+  .sidebar-close:hover{color:#1A1008}
+  .sidebar-body{overflow-y:auto;padding:10px 0 24px;flex:1}
+  .sidebar-link{display:flex;align-items:center;gap:12px;padding:12px 20px;font-size:14px;font-weight:600;color:#4A3010;transition:background .15s,color .15s}
+  .sidebar-link:hover{background:#FEF3DC;color:#D4960A}
+  .sidebar-link .sl-ic{font-size:19px;flex:none;width:22px;text-align:center}
+  .sidebar-link .sl-count{margin-left:auto;font-size:11px;color:#9B8060;font-weight:600}
+  .sidebar-link.feature{background:linear-gradient(135deg,#FEF3DC,#FFF8E8);font-weight:800;color:#1A1008}
+  .sidebar-link.feature.flash{color:#E11D48}
+  .sidebar-divider{height:1px;background:#F0DEB4;margin:8px 20px}
+  .sidebar-sublabel{font-size:11px;font-weight:700;color:#B89B6A;letter-spacing:1px;text-transform:uppercase;padding:10px 20px 4px}
+
   /* contact */
   #contact{background:linear-gradient(140deg,#1A1008,#2C1A06);padding:72px 24px}
   .contact-inner{max-width:860px;margin:0 auto;text-align:center}
@@ -112,9 +171,9 @@
 
   /* responsive */
   @media(max-width:640px){
-    .header-inner{padding:0 16px;height:56px}
+    .header-inner{padding:0 16px;height:56px;gap:10px}
     .logo img{height:36px}
-    .nav,.zalo-link{display:none}
+    .nav,.zalo-link,.sidebar-toggle{display:none}
     .mob-zalo-btn,.mob-menu-btn{display:flex}
 
     .policy-inner{grid-template-columns:repeat(2,1fr);gap:10px;padding:14px 16px}
@@ -125,6 +184,19 @@
 
     #products-section{padding:32px 16px 48px}
     .cat-grid{grid-template-columns:1fr}
+
+    #flash-sale{padding:32px 16px 4px}
+    .flash-hdr{padding:14px 16px;gap:11px}
+    .flash-hdr .fs-ic{font-size:28px}
+    .flash-hdr h2{font-size:19px}
+    .flash-hdr p{font-size:12px}
+
+    #all-products{padding:12px 16px 48px}
+    .prod-grid{grid-template-columns:repeat(2,1fr);gap:8px}
+    .pcard-body{padding:9px 10px 11px}
+    .pcard-name{font-size:11.5px}
+    .pcard-price{font-size:15px}
+    .pcard-btn{padding:8px 0;font-size:11px}
 
     .contact-grid{grid-template-columns:repeat(2,1fr)}
 
@@ -141,9 +213,11 @@
       <a href="#" class="logo" aria-label="Trang chủ">
         <img src="uploads/logo-1782118237044.jpg" alt="Logo">
       </a>
+      <button class="sidebar-toggle" onclick="openSidebar()" aria-label="Danh mục sản phẩm">☰ Danh mục</button>
       <nav class="nav">
         <a href="#about">Giới thiệu</a>
-        <a href="#products-section">Sản phẩm</a>
+        <a href="#flash-sale">Flash Sale</a>
+        <a href="#all-products">Sản phẩm</a>
         <a href="#contact">Liên hệ</a>
       </nav>
       <a href="https://www.instagram.com/potachips.co053" target="_blank" rel="noopener" class="zalo-link">
@@ -154,23 +228,33 @@
         <a href="https://www.instagram.com/potachips.co053" target="_blank" rel="noopener" class="mob-zalo-btn" aria-label="Instagram">
           <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="border-radius:5px;" aria-hidden="true"><defs><radialGradient id="ig-mob" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><rect width="24" height="24" rx="6" fill="url(#ig-mob)"/><rect x="5" y="5" width="14" height="14" rx="4" fill="none" stroke="white" stroke-width="1.5"/><circle cx="12" cy="12" r="3.5" fill="none" stroke="white" stroke-width="1.5"/><circle cx="17" cy="7" r="1" fill="white"/></svg>
         </a>
-        <button class="mob-menu-btn" aria-label="Menu" aria-expanded="false" onclick="toggleMobNav(this)">
+        <button class="mob-menu-btn" aria-label="Danh mục" aria-expanded="false" onclick="openSidebar()">
           <span></span><span></span><span></span>
         </button>
       </div>
-      <div id="mob-nav" class="mob-nav">
-        <a href="#about" onclick="closeMobNav()">Giới thiệu</a>
-        <a href="#products-section" onclick="closeMobNav()">Sản phẩm</a>
-        <a href="#contact" onclick="closeMobNav()">Liên hệ</a>
-        <div class="mob-nav-actions">
-          <a class="zalo" href="https://www.instagram.com/potachips.co053" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="border-radius:4px;" aria-hidden="true"><defs><radialGradient id="ig-nav" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><rect width="24" height="24" rx="6" fill="url(#ig-nav)"/><rect x="5" y="5" width="14" height="14" rx="4" fill="none" stroke="white" stroke-width="1.5"/><circle cx="12" cy="12" r="3.5" fill="none" stroke="white" stroke-width="1.5"/><circle cx="17" cy="7" r="1" fill="white"/></svg>@potachips.co053
-          </a>
-          <a class="shopee" href="https://shopee.vn/rosia_cosmetics" target="_blank" rel="noopener">🛒 Shopee</a>
-        </div>
-      </div>
     </div>
   </header>
+
+  <!-- SIDEBAR MENU -->
+  <div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
+  <aside class="sidebar" id="sidebar" aria-label="Danh mục sản phẩm">
+    <div class="sidebar-head">
+      <span>Danh mục sản phẩm</span>
+      <button class="sidebar-close" onclick="closeSidebar()" aria-label="Đóng">×</button>
+    </div>
+    <div class="sidebar-body">
+      <a class="sidebar-link feature flash" href="#flash-sale" onclick="closeSidebar()"><span class="sl-ic">⚡</span>Flash Sale</a>
+      <a class="sidebar-link feature" href="#all-products" onclick="closeSidebar()"><span class="sl-ic">🛍️</span>Toàn bộ sản phẩm</a>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-sublabel">Danh mục</div>
+      <div id="sidebar-cats">
+        <div style="padding:16px 20px;color:#9B8060;font-size:13px;">Đang tải...</div>
+      </div>
+      <div class="sidebar-divider"></div>
+      <a class="sidebar-link" href="#about" onclick="closeSidebar()"><span class="sl-ic">💡</span>Giới thiệu</a>
+      <a class="sidebar-link" href="#contact" onclick="closeSidebar()"><span class="sl-ic">📞</span>Liên hệ</a>
+    </div>
+  </aside>
 
   <!-- POLICY STRIP -->
   <section class="policy" style="padding:0">
@@ -301,17 +385,57 @@
     </div>
   </section>
 
+  <!-- FLASH SALE -->
+  <section id="flash-sale">
+    <div class="flash-inner">
+      <div class="flash-hdr">
+        <span class="fs-ic">⚡</span>
+        <div>
+          <h2>Flash Sale</h2>
+          <p>Ưu đãi có hạn — giá tốt nhất, nhắn Instagram để chốt đơn ngay!</p>
+        </div>
+      </div>
+      <div id="flash-grid" class="prod-grid">
+        <div style="text-align:center;padding:40px;color:#9B8060;font-size:14px;grid-column:1/-1;">Đang tải...</div>
+      </div>
+    </div>
+  </section>
+
   <!-- PRODUCTS CATALOG -->
   <section id="products-section">
     <div class="products-inner">
 
       <div class="section-hdr">
         <div class="kicker">📦 Danh Mục Sản Phẩm</div>
-        <h2><span class="dyn-products">139</span> Sản Phẩm Chính Hãng</h2>
+        <h2>Mua Theo Danh Mục</h2>
         <p>Chọn danh mục để xem sản phẩm — giá luôn rẻ hơn Shopee</p>
       </div>
 
       <div id="cat-grid" class="cat-grid">
+        <div style="text-align:center;padding:40px;color:#9B8060;font-size:14px;grid-column:1/-1;">Đang tải...</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ALL PRODUCTS -->
+  <section id="all-products">
+    <div class="all-inner">
+
+      <div class="section-hdr">
+        <div class="kicker">🛍️ Toàn Bộ Sản Phẩm</div>
+        <h2><span class="dyn-products">139</span> Sản Phẩm Chính Hãng</h2>
+        <p>Tìm nhanh sản phẩm bạn cần — nhắn Instagram để đặt hàng</p>
+      </div>
+
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input id="search-input" class="search-input" type="text" placeholder="Tìm sản phẩm hoặc thương hiệu..." oninput="onSearch(this.value)" autocomplete="off">
+        <button id="search-clear" class="search-clear" onclick="clearSearch()" aria-label="Xoá">×</button>
+      </div>
+
+      <div id="search-info" class="search-info" style="display:none;"></div>
+      <div id="all-grid" class="prod-grid">
         <div style="text-align:center;padding:40px;color:#9B8060;font-size:14px;grid-column:1/-1;">Đang tải...</div>
       </div>
 
@@ -380,20 +504,22 @@
       arrow.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(90deg)';
     }
 
-    // ── Nav drawer ──────────────────────────────────────────────
-    function toggleMobNav(btn){
-      var nav = document.getElementById('mob-nav');
-      var open = nav.classList.toggle('open');
-      if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    // ── Sidebar menu ────────────────────────────────────────────
+    function openSidebar(){
+      document.getElementById('sidebar').classList.add('open');
+      document.getElementById('sidebar-overlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
     }
-    function closeMobNav(){
-      document.getElementById('mob-nav').classList.remove('open');
-      var btn = document.querySelector('.mob-menu-btn');
-      if (btn) btn.setAttribute('aria-expanded', 'false');
+    function closeSidebar(){
+      document.getElementById('sidebar').classList.remove('open');
+      document.getElementById('sidebar-overlay').classList.remove('open');
+      document.body.style.overflow = '';
     }
 
-    // ── Category grid ────────────────────────────────────────────
+    // ── Products (flash sale + all + category grid + sidebar) ────
     (function(){
+      var IG_URL = 'https://www.instagram.com/potachips.co053';
+
       var catSlugs = {
         'Serum làm sáng/cấp ẩm/phục hồi':'serum',
         'Mặt nạ':'mat-na',
@@ -421,41 +547,118 @@
         'Tẩy da chết':'🌸','Toner':'💦','Mỹ phẩm High-end':'👑'
       };
 
-      function decode(s){
-        return (s||'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"');
+      var brandColors = {'AHOHWA':'#7C3AED','BIOTRADE':'#2563EB','VICDERMA':'#0EA5E9','PHARMAFORM':'#059669','ICON SKIN':'#D97706','CASMARA':'#DB2777','BABE':'#DC2626','EKSEPTION':'#7C3AED','OH OH':'#EA580C','MD CARE':'#0891B2','OBAGI':'#4F46E5','MAXCLINIC':'#B45309','KYUNGLAB':'#65A30D','THERAMID':'#0D9488','ACNEMY':'#E11D48','LOCCITANE':'#9333EA','CNP':'#DB2777','THE WHOO HISTORY':'#B7880C','BELIF':'#16A34A','AHC':'#2563EB','HYAESTICS':'#4F46E5','HYAESTIC':'#4F46E5'};
+      var brandBgs   = {'AHOHWA':'#F5F0FF','BIOTRADE':'#EFF6FF','VICDERMA':'#E0F2FE','PHARMAFORM':'#ECFDF5','ICON SKIN':'#FFFBEB','CASMARA':'#FDF2F8','BABE':'#FEF2F2','EKSEPTION':'#F5F3FF','OH OH':'#FFF7ED','MD CARE':'#ECFEFF','OBAGI':'#EEF2FF','MAXCLINIC':'#FFFBEB','KYUNGLAB':'#F7FEE7','THERAMID':'#F0FDFA','ACNEMY':'#FFF1F2','LOCCITANE':'#FAF5FF','CNP':'#FDF2F8','THE WHOO HISTORY':'#FEFCE8','BELIF':'#F0FDF4','AHC':'#EFF6FF','HYAESTICS':'#EEF2FF','HYAESTIC':'#EEF2FF'};
+
+      function decode(s){ return (s||'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"'); }
+      function escAttr(s){ return (s||'').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+      function fmtPrice(n){ return n > 0 ? n.toLocaleString('vi-VN') + 'đ' : ''; }
+      function brandAbbr(brand){
+        var words = brand.replace(/[^A-Za-z\s]/g,'').split(/\s+/).filter(Boolean);
+        return words.length >= 2 ? words.slice(0,2).map(function(w){return w[0].toUpperCase();}).join('') : brand.substring(0,2).toUpperCase();
       }
-      function escAttr(s){
-        return s.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+
+      function renderCard(p){
+        var bc = brandColors[p.brand] || '#6B7280';
+        var bb = brandBgs[p.brand]   || '#F3F4F6';
+        var img = p.img || '';
+        var abbr = brandAbbr(p.brand);
+        return '<div class="pcard">'
+          + '<div class="pcard-img">'
+          + '<div class="pcard-ph">'
+          + '<div style="width:52px;height:52px;border-radius:50%;background:' + bb + ';display:flex;align-items:center;justify-content:center;">'
+          + '<span style="font-size:20px;font-weight:900;color:' + bc + ';opacity:.7;line-height:1;">' + abbr + '</span></div>'
+          + '<div style="font-size:8px;font-weight:700;color:' + bc + ';opacity:.55;text-transform:uppercase;letter-spacing:1.2px;text-align:center;padding:0 8px;line-height:1.3;">' + escAttr(p.brand) + '</div>'
+          + '</div>'
+          + (img ? '<img src="' + img + '" alt="' + escAttr(p.name) + '" loading="lazy">' : '')
+          + (p.savePct > 0 ? '<div class="pcard-disc">Rẻ hơn ' + p.savePct + '%</div>' : '')
+          + (p.flashSale ? '<div class="pcard-flash">⚡ Flash Sale</div>' : '')
+          + '</div>'
+          + '<div class="pcard-body">'
+          + '<span class="pcard-brand-badge" style="background:' + bb + ';color:' + bc + ';">' + escAttr(p.brand) + '</span>'
+          + '<div class="pcard-name">' + escAttr(p.name) + '</div>'
+          + '<div><div class="pcard-price">' + fmtPrice(p.webPrice) + '</div>'
+          + (p.shopeePrice > 0 ? '<div class="pcard-shopee-price">Shopee: <s>' + fmtPrice(p.shopeePrice) + '</s></div>' : '')
+          + '</div>'
+          + '<a href="' + IG_URL + '" target="_blank" rel="noopener" class="pcard-btn">🛍️ Mua ngay</a>'
+          + '</div></div>';
       }
+
+      function renderGrid(el, products, emptyMsg){
+        if (!el) return;
+        el.innerHTML = products.length
+          ? products.map(renderCard).join('')
+          : '<div style="text-align:center;padding:40px;color:#9B8060;font-size:14px;grid-column:1/-1;">' + emptyMsg + '</div>';
+      }
+
+      var allProducts = [];
+
+      // Search (all products)
+      window.onSearch = function(val){
+        var clearBtn = document.getElementById('search-clear');
+        var grid = document.getElementById('all-grid');
+        var info = document.getElementById('search-info');
+        if (clearBtn) clearBtn.style.display = val ? 'block' : 'none';
+        if (!val.trim()) {
+          if (info) info.style.display = 'none';
+          renderGrid(grid, allProducts, 'Không có sản phẩm nào.');
+          return;
+        }
+        var q = val.toLowerCase().trim();
+        var found = allProducts.filter(function(p){
+          return p.name.toLowerCase().indexOf(q) >= 0 || p.brand.toLowerCase().indexOf(q) >= 0;
+        });
+        if (info) { info.style.display = 'block'; info.innerHTML = 'Tìm thấy <strong>' + found.length + '</strong> sản phẩm'; }
+        renderGrid(grid, found, 'Không tìm thấy — thử tên thương hiệu hoặc công dụng khác.');
+      };
+      window.clearSearch = function(){
+        var inp = document.getElementById('search-input');
+        if (inp) inp.value = '';
+        window.onSearch('');
+      };
 
       fetch('products_full.json')
         .then(function(r){ return r.json(); })
         .then(function(raw){
           var primaryCat = function(c){ return decode((c||'').split(',')[0].trim()); };
-          var products = raw.map(function(p){
-            return { category: primaryCat(p.category), brand: decode(p.brand) };
+          allProducts = raw.map(function(p){
+            return Object.assign({}, p, {
+              name: decode(p.name),
+              brand: decode(p.brand),
+              category: primaryCat(p.category),
+              shopeePrice: p.shopeePrice > 100 ? p.shopeePrice : 0,
+              savePct: (p.shopeePrice > 100 && p.savePct > 0 && p.savePct < 80) ? p.savePct : 0
+            });
           });
 
           var catCounts = {};
           var catOrder = [];
-          products.forEach(function(p){
+          var brands = [];
+          allProducts.forEach(function(p){
             if (!catCounts[p.category]) { catCounts[p.category] = 0; catOrder.push(p.category); }
             catCounts[p.category]++;
+            if (brands.indexOf(p.brand) < 0) brands.push(p.brand);
           });
 
-          var brands = [];
-          products.forEach(function(p){ if (brands.indexOf(p.brand) < 0) brands.push(p.brand); });
           document.querySelectorAll('.dyn-products').forEach(function(el){ el.textContent = raw.length; });
           document.querySelectorAll('.dyn-brands').forEach(function(el){ el.textContent = brands.length; });
 
+          // Flash sale grid
+          var flashProducts = allProducts.filter(function(p){ return p.flashSale; });
+          renderGrid(document.getElementById('flash-grid'), flashProducts, 'Hiện chưa có sản phẩm flash sale.');
+
+          // All products grid
+          renderGrid(document.getElementById('all-grid'), allProducts, 'Không có sản phẩm nào.');
+
+          // Category grid
           var grid = document.getElementById('cat-grid');
-          if (!grid) return;
-          var html = '';
+          var sideCats = document.getElementById('sidebar-cats');
+          var gridHtml = '', sideHtml = '';
           catOrder.forEach(function(cat){
             var slug = catSlugs[cat];
             if (!slug) return;
             var icon = catIcons[cat] || '📦';
-            html += '<a href="/' + slug + '/" class="cat-card">'
+            gridHtml += '<a href="/' + slug + '/" class="cat-card">'
               + '<span class="cat-card-icon">' + icon + '</span>'
               + '<span class="cat-card-body">'
               + '<span class="cat-card-name">' + escAttr(cat) + '</span>'
@@ -463,12 +666,20 @@
               + '</span>'
               + '<span class="cat-card-arrow">›</span>'
               + '</a>';
+            sideHtml += '<a href="/' + slug + '/" class="sidebar-link">'
+              + '<span class="sl-ic">' + icon + '</span>' + escAttr(cat)
+              + '<span class="sl-count">' + catCounts[cat] + '</span></a>';
           });
-          grid.innerHTML = html;
+          if (grid) grid.innerHTML = gridHtml;
+          if (sideCats) sideCats.innerHTML = sideHtml;
         })
         .catch(function(){
-          var grid = document.getElementById('cat-grid');
-          if (grid) grid.innerHTML = '<div style="text-align:center;padding:40px;color:#9B8060;font-size:14px;grid-column:1/-1;">Không thể tải danh mục. Vui lòng liên hệ qua Zalo.</div>';
+          ['flash-grid','all-grid','cat-grid'].forEach(function(id){
+            var el = document.getElementById(id);
+            if (el) el.innerHTML = '<div style="text-align:center;padding:40px;color:#9B8060;font-size:14px;grid-column:1/-1;">Không thể tải sản phẩm. Vui lòng liên hệ qua Instagram.</div>';
+          });
+          var sideCats = document.getElementById('sidebar-cats');
+          if (sideCats) sideCats.innerHTML = '<div style="padding:16px 20px;color:#9B8060;font-size:13px;">Không thể tải danh mục.</div>';
         });
     })();
   </script>
