@@ -175,6 +175,10 @@
     .logo img{height:36px}
     .nav,.zalo-link,.sidebar-toggle{display:none}
     .mob-zalo-btn,.mob-menu-btn{display:flex}
+    /* mobile: menu button far left, logo swapped to the right */
+    .mob-menu-btn{order:1}
+    .header-actions{order:2}
+    .logo{order:3}
 
     .policy-inner{grid-template-columns:repeat(2,1fr);gap:10px;padding:14px 16px}
 
@@ -210,6 +214,9 @@
   <!-- STICKY HEADER -->
   <header>
     <div class="header-inner">
+      <button class="mob-menu-btn" aria-label="Danh mục" aria-expanded="false" onclick="openSidebar()">
+        <span></span><span></span><span></span>
+      </button>
       <a href="#" class="logo" aria-label="Trang chủ">
         <img src="uploads/logo-1782118237044.jpg" alt="Logo">
       </a>
@@ -228,9 +235,6 @@
         <a href="https://www.instagram.com/potachips.co053" target="_blank" rel="noopener" class="mob-zalo-btn" aria-label="Instagram">
           <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="border-radius:5px;" aria-hidden="true"><defs><radialGradient id="ig-mob" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><rect width="24" height="24" rx="6" fill="url(#ig-mob)"/><rect x="5" y="5" width="14" height="14" rx="4" fill="none" stroke="white" stroke-width="1.5"/><circle cx="12" cy="12" r="3.5" fill="none" stroke="white" stroke-width="1.5"/><circle cx="17" cy="7" r="1" fill="white"/></svg>
         </a>
-        <button class="mob-menu-btn" aria-label="Danh mục" aria-expanded="false" onclick="openSidebar()">
-          <span></span><span></span><span></span>
-        </button>
       </div>
     </div>
   </header>
