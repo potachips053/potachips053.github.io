@@ -142,6 +142,12 @@ def build(rows, force_images=False, skip_images=False):
         link = str(r.get("shopee_link") or "").strip()
         img_url = str(r["img_url"] or "").strip()
         img_rel = "%s/%s.png" % (IMG_REL_DIR.replace(os.sep, "/"), pid)
+        key = drive_key(img_url)
+        # Cache-busting version: changes only when the image's Drive link changes
+        # (which happens whenever the image itself changes), so unchanged images
+        # keep caching while updated ones refresh.
+        ver = hashlib.sha1(key.encode("utf-8")).hexdigest()[:8] if key else ""
+        img_field = img_rel + ("?v=%s" % ver if ver else "")
 
         products.append({
             "id": pid,
@@ -152,11 +158,10 @@ def build(rows, force_images=False, skip_images=False):
             "shopeePrice": shopee,
             "savePct": save,
             "shopeeLink": link if link.startswith("http") else "",
-            "img": img_rel,
+            "img": img_field,
             "flashSale": as_bool(r.get("flashsale")),
         })
 
-        key = drive_key(img_url)
         dest = os.path.join(ROOT, img_rel)
         prev_key = old.get(str(pid), {}).get("img")
         need = force_images or prev_key != key or not os.path.exists(dest)

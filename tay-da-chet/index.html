@@ -255,7 +255,7 @@
       if (btn) btn.setAttribute('aria-expanded', 'false');
     }
 
-    fetch('../products_full.json')
+    fetch('../products_full.json?t=' + Date.now(), {cache:'no-store'})
       .then(function(r){ return r.json(); })
       .then(function(raw){
         var primaryCat = function(c){ return decode((c||'').split(',')[0].trim()); };
