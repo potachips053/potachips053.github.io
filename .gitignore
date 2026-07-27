@@ -1,3 +1,6 @@
 .DS_Store
 /cosmetics-product-showcase-design/
 *.zip
+__pycache__/
+website-product.xlsx
+~$*.xlsx
