@@ -1,0 +1,56 @@
+name: Sync products from Google Sheet
+
+on:
+  schedule:
+    # every 15 minutes (GitHub may delay scheduled runs under load)
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+    inputs:
+      force_images:
+        description: 'Re-download every image (ignore the change manifest)'
+        type: boolean
+        default: false
+  repository_dispatch:
+    # optional instant trigger: POST an event of this type to run immediately
+    types: [sync-products]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-products
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install openpyxl
+
+      - name: Build products from the sheet
+        env:
+          SHEET_ID: ${{ vars.SHEET_ID || '1yiOvClxMxnn_-3o6mzN4txXjZwrZv2WY' }}
+          FORCE_IMAGES: ${{ github.event.inputs.force_images }}
+        run: |
+          ARGS=""
+          if [ "$FORCE_IMAGES" = "true" ]; then ARGS="--force-images"; fi
+          python scripts/build_products.py $ARGS
+
+      - name: Commit & push if anything changed
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add -A products_full.json sync-manifest.json uploads/products
+          if git diff --cached --quiet; then
+            echo 'No changes — nothing to deploy.'
+          else
+            git commit -m 'chore: sync products from Google Sheet'
+            git push
+          fi
