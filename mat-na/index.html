@@ -69,6 +69,11 @@
   .mob-cta .zalo{background:#EDF3FF;border:1.5px solid #0068FF;color:#0068FF}
   .mob-cta .zalo img{width:20px;height:20px;object-fit:contain}
   .mob-cta .shopee{background:#EE4D2D;color:#fff}
+
+  /* desktop floating Zalo button */
+  .desktop-fab{display:flex;position:fixed;bottom:28px;right:28px;z-index:300;align-items:center;gap:8px;background:#fff;border:1.5px solid #0068FF;color:#0068FF;padding:12px 20px;border-radius:999px;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.15);transition:transform .15s,box-shadow .15s}
+  .desktop-fab:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.2)}
+  .desktop-fab img{width:22px;height:22px;object-fit:contain}
   @media(max-width:640px){
     .header-inner{padding:0 16px;height:56px}
     .logo img{height:36px}
@@ -80,6 +85,7 @@
     .pcard-price{font-size:15px}
     body{padding-bottom:64px}
     .mob-cta{display:flex}
+    .desktop-fab{display:none}
   }
 </style>
 </head>
@@ -158,6 +164,12 @@
       <img src="../uploads/pasted-1782143414908-0.png" alt="Zalo">Đặt hàng qua Zalo ngay
     </a>
   </div>
+
+  <!-- DESKTOP FLOATING ZALO BUTTON -->
+  <a href="https://zalo.me/0899200899" target="_blank" rel="noopener" class="desktop-fab">
+    <img src="../uploads/pasted-1782143414908-0.png" alt="Zalo">
+    Đặt hàng qua Zalo ngay
+  </a>
 
   <script>
     var CATEGORY = 'Mặt nạ';
