@@ -91,8 +91,6 @@
   .pcard-price{font-size:17px;font-weight:800;color:#D4960A;line-height:1.2}
   .pcard-shopee-price{font-size:10.5px;color:#9B8060;margin-top:2px}
   .pcard-shopee-price s{text-decoration:line-through}
-  .pcard-btn{display:flex;align-items:center;justify-content:center;gap:5px;background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff;padding:9px 0;border-radius:7px;font-size:11.5px;font-weight:700;text-decoration:none;min-height:38px;transition:filter .15s}
-  .pcard-btn:hover{filter:brightness(1.08)}
 
   /* flash sale */
   #flash-sale{padding:44px 24px 8px}
@@ -200,7 +198,6 @@
     .pcard-body{padding:9px 10px 11px}
     .pcard-name{font-size:11.5px}
     .pcard-price{font-size:15px}
-    .pcard-btn{padding:8px 0;font-size:11px}
 
     .contact-grid{grid-template-columns:repeat(2,1fr)}
 
@@ -481,8 +478,6 @@
 
     // ── Products (flash sale + all + category grid + sidebar) ────
     (function(){
-      var IG_URL = 'https://www.instagram.com/potachips.co053';
-
       var catSlugs = {
         'Serum làm sáng/cấp ẩm/phục hồi':'serum',
         'Mặt nạ':'mat-na',
@@ -543,7 +538,6 @@
           + '<div><div class="pcard-price">' + fmtPrice(p.webPrice) + '</div>'
           + (p.shopeePrice > 0 ? '<div class="pcard-shopee-price">Shopee: <s>' + fmtPrice(p.shopeePrice) + '</s></div>' : '')
           + '</div>'
-          + '<a href="' + IG_URL + '" target="_blank" rel="noopener" class="pcard-btn">🛍️ Mua ngay</a>'
           + '</div></div>';
       }
 
