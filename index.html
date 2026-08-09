@@ -206,6 +206,8 @@
 
     body{padding-bottom:64px}
     .mob-cta{display:flex}
+
+    #about{padding:32px 16px}
   }
 </style>
 </head>
@@ -300,23 +302,24 @@
       <!-- Expandable cards -->
       <div style="display:flex;flex-direction:column;gap:10px;">
 
-        <!-- Card 1: Câu chuyện -->
-        <div style="border:1.5px solid #F0DEB4;border-radius:14px;overflow:hidden;background:#fff;">
-          <button onclick="toggleAboutCard('story')" onmouseover="this.style.background='#FFFAF0'" onmouseout="this.style.background='none'" style="width:100%;display:flex;align-items:center;gap:12px;padding:16px 20px;background:none;border:none;cursor:pointer;text-align:left;">
-            <span style="font-size:22px;flex:none;">💌</span>
-            <span style="flex:1;">
-              <span style="display:block;font-size:14px;font-weight:700;color:#1A1008;">Câu chuyện của Potachips</span>
-              <span style="display:block;font-size:12px;color:#9B8060;margin-top:2px;">Tại sao tụi mình rời sàn để kết nối trực tiếp với bạn?</span>
-            </span>
-            <span id="about-story-arrow" style="font-size:20px;color:#D4960A;transition:transform .2s;display:inline-block;transform:rotate(0deg);">›</span>
-          </button>
-          <div id="about-story-body" style="display:none;padding:4px 20px 20px;border-top:1px solid #F0DEB4;">
-            <p style="font-size:13.5px;color:#4A3010;line-height:1.8;margin:16px 0 12px;">Sau hơn <strong>7 năm đồng hành</strong> cùng làn da các nàng qua sàn TMĐT, tụi mình trân quý những nền tảng công nghệ TMĐT, vì đó là chiếc cầu nối đầu tiên để tụi mình có duyên gặp gỡ và đồng hành với các nàng suốt 7 năm qua.</p>
-            <p style="font-size:13.5px;color:#4A3010;line-height:1.8;margin:0 0 12px;">Thế nhưng, những chi phí phát sinh ngày càng nhiều dẫn đến giá sản phẩm bên mình vô tình bị đẩy lên cao, làm cả mình và bạn đều chịu thiệt thòi. Những chiếc kem, serum tụi mình mang đến bị đội giá vì chi phí trung gian — mình nghĩ tụi mình hoàn toàn có thể trực tiếp gặp nhau qua <strong>Potachips</strong> để cắt bỏ những chi phí ẩn, bạn vẫn chi trả cho một sản phẩm skincare nhưng với một <em>"biến động số dư" dễ chịu hơn</em>!</p>
-            <p style="font-size:13.5px;color:#4A3010;line-height:1.8;margin:0 0 12px;">Potachips được mình gửi gắm như một <em>"nhà chung"</em> của tụi mình. Không thông qua bên thứ 3, toàn bộ phần chi phí trung gian cắt giảm được, mình quyết định <strong>trừ thẳng vào giá thành</strong> và tặng kèm đặc quyền Freeship.</p>
-            <div style="background:linear-gradient(135deg,#FEF3DC,#FFF8E8);border-radius:10px;padding:14px 16px;margin-top:4px;">
-              <p style="font-size:13px;font-weight:700;color:#8B4513;margin:0;line-height:1.7;">🚫 KHÔNG GÁNH CHI PHÍ ẨN &nbsp;·&nbsp; ✅ CAM KẾT CHÍNH HÃNG &nbsp;·&nbsp; 💬 TƯ VẤN 1:1</p>
-            </div>
+        <!-- Highlight 1: Chính hãng, giá tốt -->
+        <div style="border:1.5px solid #F0DEB4;border-radius:14px;background:#fff;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;">
+          <span style="font-size:24px;flex:none;line-height:1;">✅</span>
+          <div>
+            <div style="font-size:14.5px;font-weight:700;color:#1A1008;margin-bottom:4px;">Hàng chính hãng, giá tốt hơn</div>
+            <p style="font-size:13.5px;color:#4A3010;line-height:1.7;margin:0;">Sản phẩm bên mình <strong>100% chính hãng</strong>, nhưng bán trực tiếp không qua sàn nên không gánh phí sàn — giá luôn tốt hơn. Cần yên tâm hơn thì cứ nhắn mình, tụi mình gửi giấy chứng nhận đại lý từ brand nhé!</p>
+          </div>
+        </div>
+
+        <!-- Highlight 2: Dược mỹ phẩm qua Zalo -->
+        <div style="border:1.5px solid #F0DEB4;border-radius:14px;background:#fff;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;">
+          <span style="font-size:24px;flex:none;line-height:1;">💊</span>
+          <div style="flex:1;">
+            <div style="font-size:14.5px;font-weight:700;color:#1A1008;margin-bottom:4px;">Đa dạng dược mỹ phẩm — ưu đãi qua Zalo</div>
+            <p style="font-size:13.5px;color:#4A3010;line-height:1.7;margin:0 0 12px;">Trên web chỉ đang trưng bày các sản phẩm <strong>tiêu biểu</strong>. Bên mình phân phối đa phần các dòng dược mỹ phẩm khác — nhắn trực tiếp Zalo để được tư vấn và nhận giá ưu đãi nhé!</p>
+            <a href="https://zalo.me/0903711025" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:7px;background:#0068FF;color:#fff;padding:12px 0;border-radius:10px;font-size:13.5px;font-weight:700;text-decoration:none;min-height:44px;">
+              💬 Nhắn Zalo ngay
+            </a>
           </div>
         </div>
 
