@@ -261,7 +261,7 @@
             shopeePrice: p.shopeePrice > 100 ? p.shopeePrice : 0,
             savePct: (p.shopeePrice > 100 && p.savePct > 0 && p.savePct < 80) ? p.savePct : 0
           });
-        }).filter(function(p){ return p.category === CATEGORY; });
+        }).filter(function(p){ return p.category === CATEGORY; }).sort(function(a,b){ return a.webPrice - b.webPrice; });
         var countEl = document.getElementById('cat-count-text');
         if (countEl) countEl.textContent = allProducts.length + ' sản phẩm';
         renderAll(allProducts);

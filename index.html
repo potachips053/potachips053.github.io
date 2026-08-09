@@ -586,7 +586,7 @@
               shopeePrice: p.shopeePrice > 100 ? p.shopeePrice : 0,
               savePct: (p.shopeePrice > 100 && p.savePct > 0 && p.savePct < 80) ? p.savePct : 0
             });
-          });
+          }).sort(function(a,b){ return a.webPrice - b.webPrice; });
 
           var catCounts = {};
           var catOrder = [];
